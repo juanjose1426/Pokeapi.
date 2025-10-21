@@ -1,0 +1,153 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #0f172a; /* fondo oscuro */
+  color: #f1f5f9; /* texto claro */
+  padding-bottom: 100px;
+  overflow-x: hidden;
+}
+
+/* Botones */
+button {
+  background: #3b82f6; /* azul brillante */
+  border: none;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4);
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(37, 99, 235, 0.6);
+}
+
+/* Contenedores de lista */
+.c-lista,
+.c-contenedor-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Cartas de Pokémon */
+.c-lista-pokemon {
+  background: linear-gradient(145deg, #1e293b, #273449);
+  border-radius: 20px;
+  padding: 18px 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #e0e7ff;
+  user-select: none;
+}
+
+.c-lista-pokemon:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(59, 130, 246, 0.7);
+}
+
+.c-lista-pokemon p {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  color: #93c5fd;
+}
+
+/* Pokémon en posesión */
+.c-mios-pokemon {
+  border: 2.5px solid #3b82f6;
+  background: #1e293b;
+  color: #93c5fd;
+}
+
+/* Elemento especial tipo "unpoke" */
+.c-unpoke {
+  background: #334155;
+  color: #cbd5e1;
+  height: 100px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.c-unpoke:hover {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 0 15px #3b82f6;
+}
+
+/* Navegación fija inferior */
+.c-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1e293b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.7);
+  border-top: 3px solid #3b82f6;
+  z-index: 9999;
+}
+
+.c-nav-item {
+  flex: 1;
+  text-align: center;
+  color: #93c5fd;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.c-nav-item:hover {
+  color: #3b82f6;
+  transform: translateY(-4px);
+}
+
+.c-nav-item:active {
+  transform: scale(0.9);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .c-lista-pokemon {
+    width: 100%;
+  }
+
+  .c-unpoke {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .c-nav-item {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
